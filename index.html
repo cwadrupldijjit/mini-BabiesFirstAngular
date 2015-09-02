@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="friendsList">
+	<head>
+		<meta charset="UTF-8">
+		<title>Babies First Angular</title>
+		
+		<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	
+	<body ng-controller="MainController as mc">
+		<div>
+			<fieldset>
+				<legend>Add New Friend</legend>
+				
+				<input type="text" ng-model="mc.newFriend" />
+				<input type="submit" ng-click="mc.addFriend()" />
+			</fieldset>
+		</div>
+		
+		<div>
+			<h1>Friends List</h1>
+			<div ng-repeat="friend in mc.friends">
+				<p> {{ friend }} </p>
+			</div>
+		</div>
+		
+		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="bower_components/angular-material/angular-material.min.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
